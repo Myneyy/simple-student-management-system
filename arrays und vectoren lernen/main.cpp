@@ -28,11 +28,11 @@ struct Schueler {
 vector<Schueler> schuelerListe;
 
 void MainMenu() {
-	cout << "1. Schüler hinzufügen\n";
-	cout << "2. Alle Schüler anzeigen\n";
-	cout << "3. Schüler Suchen\n";
+	cout << "1. SchÃ¼ler hinzufÃ¼gen\n";
+	cout << "2. Alle SchÃ¼ler anzeigen\n";
+	cout << "3. SchÃ¼ler Suchen\n";
 	cout << "4. Schueler loeschen\n";
-	cout << "5. Note eines Schuelers ändern\n";
+	cout << "5. Note eines Schuelers Ã¤ndern\n";
 	cout << "6. Beenden\n";
 	cin >> eingabe;
 }
@@ -57,7 +57,7 @@ void addSchueler() {
 	newSchueler.note = note_eingabe;
 
 	schuelerListe.push_back(newSchueler);
-	cout << "Neuer Schüler hinzugefügt!\n";
+	cout << "Neuer SchÃ¼ler hinzugefÃ¼gt!\n";
 }
 
 void showSchueler() {
@@ -80,17 +80,17 @@ void sucheSchueler() {
 	
 
 	if (schuelerListe.empty()) {
-		cout << "Keine Schüler vorhanden!\n";
+		cout << "Keine SchÃ¼ler vorhanden!\n";
 		return;
 	}
 
 	string nameSuche;
-	cout << "Gib den Namen ein, den du suchen möchtest: ";
+	cout << "Gib den Namen ein, den du suchen mÃ¶chtest: ";
 	cin >> nameSuche;
 
 	
 
-	for (Schueler& item : schuelerListe) {  // auto ausgeschrieben
+	for (Schueler& item : schuelerListe) {
 		if (item.name == nameSuche) {
 			item.printInfo();
 			gefunden = true;
@@ -100,7 +100,7 @@ void sucheSchueler() {
 	}
 
 	if (!gefunden) {
-		cout << "Schüler nicht gefunden!\n";
+		cout << "SchÃ¼ler nicht gefunden!\n";
 	}
 
 	
@@ -112,14 +112,14 @@ void schuelerLoeschen() {
 
 
 	string nameSuche;
-	cout << "Welchen Schüler löschen? ";
+	cout << "Welchen SchÃ¼ler lÃ¶schen? ";
 	cin >> nameSuche;
 
 	
 
 	for (int positionImVector = 0; positionImVector < schuelerListe.size(); positionImVector++) {
 		if (schuelerListe[positionImVector].name == nameSuche) {
-			cout << "Schüler " << schuelerListe[positionImVector].name << " gelöscht!\n";
+			cout << "SchÃ¼ler " << schuelerListe[positionImVector].name << " gelÃ¶scht!\n";
 			schuelerListe.erase(schuelerListe.begin() + positionImVector);
 			gefunden = true;
 			break;
@@ -127,7 +127,7 @@ void schuelerLoeschen() {
 	}
 
 	if (!gefunden) {
-		cout << "Kein Schüler mit diesem Namen gefunden!\n";
+		cout << "Kein SchÃ¼ler mit diesem Namen gefunden!\n";
 	}
 }
 
@@ -192,7 +192,7 @@ int main() {
 		}
 
 		else {
-			cout << "Ungültige eingabe!\n";
+			cout << "UngÃ¼ltige eingabe!\n";
 		}
 
 		
